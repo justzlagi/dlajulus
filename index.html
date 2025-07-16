@@ -208,75 +208,83 @@
     <div class="message-box" id="messageBox"></div>
   </section>
 
-  <script>
-    const messages = [
-      "Jesteś najpiękniejszą częścią mojego dnia ✨",
-      "Kocham Cię bardziej niż wczoraj, ale mniej niż jutro 💖",
-      "Twój uśmiech to moje ulubione światło 🌟",
-      "Z Tobą czuję się kompletny 🧩",
-      "Każde bicie mojego serca to wiadomość: KOCHAM CIĘ ❤️",
-      "Jesteś moim domem, gdziekolwiek jesteśmy 🏡",
-      "Juluś, jesteś cudem mojego życia 💫",
-      "Nie jesteś tylko częścią mojego życia — jesteś jego sercem ❤️",
-      "Twoje oczy są piękniejsze niż wszystkie zachody słońca 🌅",
-      "Twoja obecność to najpiękniejszy prezent, jaki dostałem 🎁"
-    ];
+<script>
+  // Wiadomości krótkie
+  const messages = [
+    "Jesteś najpiękniejszą częścią mojego dnia ✨",
+    "Kocham Cię bardziej niż wczoraj, ale mniej niż jutro 💖",
+    "Twój uśmiech to moje ulubione światło 🌟",
+    "Z Tobą czuję się kompletny 🧩",
+    "Każde bicie mojego serca to wiadomość: KOCHAM CIĘ ❤️",
+    "Jesteś moim domem, gdziekolwiek jesteśmy 🏡",
+    "Juluś, jesteś cudem mojego życia 💫",
+    "Nie jesteś tylko częścią mojego życia — jesteś jego sercem ❤️",
+    "Twoje oczy są piękniejsze niż wszystkie zachody słońca 🌅",
+    "Twoja obecność to najpiękniejszy prezent, jaki dostałem 🎁"
+  ];
 
-    function showMessage() {
-      const messageBox = document.getElementById("messageBox");
-      const msg = messages[Math.floor(Math.random() * messages.length)];
-      messageBox.innerHTML = "";
-      let i = 0;
-      function typeWriter() {
-        if (i < msg.length) {
-          messageBox.innerHTML += msg.charAt(i);
-          i++;
-          setTimeout(typeWriter, 40);
-        } else {
-          messageBox.innerHTML += `<br><div style='text-align:right; font-family:Pacifico, cursive;'>Twój chłopak 💘</div>`;
-        }
+  // Funkcja: pokazuje losową wiadomość
+  function showMessage() {
+    const messageBox = document.getElementById("messageBox");
+    const msg = messages[Math.floor(Math.random() * messages.length)];
+    messageBox.innerHTML = "";
+    let i = 0;
+    function typeWriter() {
+      if (i < msg.length) {
+        messageBox.innerHTML += msg.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      } else {
+        messageBox.innerHTML += `<br><div style='text-align:right; font-family:Pacifico, cursive;'>Twój chłopak 💘</div>`;
       }
-      typeWriter();
     }
+    typeWriter();
+  }
 
-    function showDistanceMessage() {
-      const msg = `Moja ukochana Juluś 💕\n\nChoć dzieli nas odległość, moje serce każdego dnia bije tylko dla Ciebie. Nie widzieliśmy się jeszcze twarzą w twarz, ale Ty jesteś w moich myślach od rana do nocy. Twój głos, Twoje słowa, Twoja obecność – nawet przez ekran – dają mi siłę i nadzieję.\n\nCzuję, jakbyś była blisko. Jakby Twoja dusza była zawsze przy mnie. Nasza relacja udowadnia, że miłość nie potrzebuje fizycznej bliskości – wystarczy serce, które naprawdę kocha. A moje kocha Ciebie... najmocniej jak się da.\n\nWierzę, że ten dzień, kiedy się spotkamy, będzie najpiękniejszym w moim życiu. A do tego czasu – jesteś moim codziennym szczęściem, nawet z daleka. Kocham Cię ponad wszystko.\n\nNa zawsze Twój 💘`;
+  // Funkcja: długa wiadomość o miłości na odległość
+  function showDistanceMessage() {
+    const msg = `Moja ukochana Juluś 💕\n\nChoć dzieli nas odległość, moje serce każdego dnia bije tylko dla Ciebie. Nie widzieliśmy się jeszcze twarzą w twarz, ale Ty jesteś w moich myślach od rana do nocy. Twój głos, Twoje słowa, Twoja obecność – nawet przez ekran – dają mi siłę i nadzieję.\n\nCzuję, jakbyś była blisko. Jakby Twoja dusza była zawsze przy mnie. Nasza relacja udowadnia, że miłość nie potrzebuje fizycznej bliskości – wystarczy serce, które naprawdę kocha. A moje kocha Ciebie... najmocniej jak się da.\n\nWierzę, że ten dzień, kiedy się spotkamy, będzie najpiękniejszym w moim życiu. A do tego czasu – jesteś moim codziennym szczęściem, nawet z daleka. Kocham Cię ponad wszystko.\n\nNa zawsze Twój 💘`;
 
-      const messageBox = document.getElementById("messageBox");
-      messageBox.innerHTML = "";
-      let i = 0;
-      function typeWriter() {
-        if (i < msg.length) {
-          messageBox.innerHTML += msg.charAt(i) === '\n' ? '<br>' : msg.charAt(i);
-          i++;
-          setTimeout(typeWriter, 30);
-        }
+    const messageBox = document.getElementById("messageBox");
+    messageBox.innerHTML = "";
+    let i = 0;
+    function typeWriter() {
+      if (i < msg.length) {
+        messageBox.innerHTML += msg.charAt(i) === '\n' ? '<br>' : msg.charAt(i);
+        i++;
+        setTimeout(typeWriter, 30);
       }
-      typeWriter();
     }
+    typeWriter();
+  }
 
-    const startDate = new Date("2025-03-17");
-    const now = new Date();
-    const diffTime = now - startDate;
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    document.getElementById("daysCounter").innerText = `Razem już: ${diffDays} dni 💞`;
+  // Licznik dni razem
+  const startDate = new Date("2025-03-17");
+  const now = new Date();
+  const diffTime = now - startDate;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  document.getElementById("daysCounter").innerText = `Razem już: ${diffDays} dni 💞`;
 
-    window.addEventListener('click', () => {
-      const audio = document.getElementById("bgMusic");
-      if (audio.paused) {
-        audio.play().catch(() => {});
-      }
-    }, { once: true });
+  // Serduszka animacja
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (3 + Math.random() * 4) + 's';
+    document.getElementById('heart-container').appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+  }
+  setInterval(createHeart, 300);
 
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (3 + Math.random() * 4) + 's';
-      document.getElementById('heart-container').appendChild(heart);
-      setTimeout(() => heart.remove(), 7000);
+  // Automatyczne odtwarzanie muzyki po kliknięciu (działa na telefonie)
+  window.addEventListener('click', () => {
+    const audio = document.getElementById("bgMusic");
+    if (audio.paused) {
+      audio.play().catch(() => {
+        console.warn("Nie można odtworzyć automatycznie — przeglądarka blokuje autoplay.");
+      });
     }
-    setInterval(createHeart, 300);
-  </script>
+  }, { once: true });
+</script>
 </body>
 </html>
